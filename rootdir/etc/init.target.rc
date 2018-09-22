@@ -159,6 +159,7 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
+    writepid /dev/cpuset/camera-daemon/tasks
 
 on init
    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
@@ -258,6 +259,7 @@ service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
     group radio diag inet log
     seclabel u:r:hal_imsrtp:s0
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.imsrcsservice /system/vendor/bin/imsrcsd
     class main
@@ -274,12 +276,14 @@ service fingerprintd /system/bin/fingerprintd
     class late_start
     socket fpce stream 0666 system system
     user system
+    writepid /dev/cpuset/system-background/tasks
 
 service gx_fpd /system/bin/gx_fpd
     class late_start
     user root
     group root system
     seclabel u:r:goodix:s0
+    writepid /dev/cpuset/system-background/tasks
 
 on charger
     setprop persist.sys.usb.config mass_storage
