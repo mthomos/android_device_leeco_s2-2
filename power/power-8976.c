@@ -68,7 +68,7 @@ static int profile_high_performance[] = {
 };
 
 static int profile_power_save[] = {
-    CPUS_ONLINE_MAX_LIMIT_BIG, 0x1, // limit max count of online cores in big cluster to 1
+    CPUS_ONLINE_MAX_BIG, 0x1, // limit max count of online cores in big cluster to 1
     MAX_FREQ_BIG_CORE_0, 0x3bf,     // (next possible freq equals/above at) 959 MHz
     MAX_FREQ_LITTLE_CORE_0, 0x300,  // (next possible freq equals/above at) 768 MHz
 };
@@ -79,7 +79,7 @@ static int profile_bias_power[] = {
 };
 
 static int profile_bias_performance[] = {
-    CPUS_ONLINE_MAX_LIMIT_BIG, 0x4, // 4 cores maximum limit on big cluster
+    CPUS_ONLINE_MAX_BIG, 0x4, // 4 cores maximum limit on big cluster
     MIN_FREQ_BIG_CORE_0, 0x540,     // (next possible freq equals/above at) 1344 MHz
 };
 
