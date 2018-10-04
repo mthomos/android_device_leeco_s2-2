@@ -60,11 +60,8 @@ static int profile_high_performance[] = {
     CPUS_ONLINE_MIN_BIG, 0x4,
     MIN_FREQ_BIG_CORE_0, 0xFFF,       // maximum frequency on big cluster
     MIN_FREQ_LITTLE_CORE_0, 0xFFF,    // maximum frequency on LITTLE cluster
-    GPU_MIN_PWRLVL_BOOST, 0x1,
-    // SCHED_PREFER_IDLE_DIS_V3, 0x1, // not supported on kernel 3.10
-    SCHED_SMALL_TASK_DIS, 0x1,
-    // SCHED_IDLE_NR_RUN_DIS, 0x1,    // not supported on kernel 3.10
-    // SCHED_IDLE_LOAD_DIS, 0x1,      // not supported on kernel 3.10
+    GPU_MIN_POWER_LEVEL, 0x1,
+    SCHED_SMALL_TASK, 0x1,
 };
 
 static int profile_power_save[] = {
